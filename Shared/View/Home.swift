@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-  
+
   @StateObject var taskModel: TaskViewModel = .init()
   // MARK: Matched Geometry Namespace
   @Namespace var animation
@@ -23,19 +23,19 @@ struct Home: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical)
-        
-        CustomSegmentedBar()
+
+        customSegmentedBar()
           .padding(.top, 5)
-        
+
         // MARK: Task View
-        
+
       }
       .padding()
     }
     .overlay(alignment: .bottom) {
       // MARK: Add Button
       Button {
-        
+
       } label: {
         Label {
           Text("Add Button")
@@ -63,10 +63,10 @@ struct Home: View {
       }
     }
   }
-  
+
   // MARK: Custom Segmented Bar
   @ViewBuilder
-  func CustomSegmentedBar() -> some View {
+  func customSegmentedBar() -> some View {
     let tabs = ["Today", "Updating", "Task Done"]
     HStack(spacing: 10) {
       ForEach(tabs, id: \.self) { tab in
@@ -78,7 +78,7 @@ struct Home: View {
           .padding(.vertical, 6)
           .frame(maxWidth: .infinity)
           .contentShape(Capsule())
-          .background{
+          .background {
             if taskModel.currentTab == tab {
               Capsule()
                 .fill(.black)
