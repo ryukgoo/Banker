@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B87AB5062835449000152C16 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB5052835449000152C16 /* TaskViewModel.swift */; };
 		B87AB50828354C0300152C16 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB50728354C0300152C16 /* AddNewTask.swift */; };
+		B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */; };
+		B87EBC9A28368DEE00EC985E /* Banker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */; };
 		B88B24DC2833C894008382BF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B24DB2833C894008382BF /* Tests_iOS.swift */; };
 		B88B24DE2833C894008382BF /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B24DD2833C894008382BF /* Tests_iOSLaunchTests.swift */; };
 		B88B24E82833C894008382BF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B24E72833C894008382BF /* Tests_macOS.swift */; };
@@ -45,6 +47,7 @@
 /* Begin PBXFileReference section */
 		B87AB5052835449000152C16 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B87AB50728354C0300152C16 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
+		B87EBC9828368DEE00EC985E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		B88B24C22833C892008382BF /* BankerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerApp.swift; sourceTree = "<group>"; };
 		B88B24C32833C892008382BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B88B24C42833C892008382BF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 				B88B24C32833C892008382BF /* ContentView.swift */,
 				B88B24C42833C892008382BF /* Persistence.swift */,
 				B88B24C52833C894008382BF /* Assets.xcassets */,
+				B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -345,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -354,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */,
 				B88B24ED2833C894008382BF /* BankerApp.swift in Sources */,
 				B88B24F12833C894008382BF /* Persistence.swift in Sources */,
 				B88B25062833CC56008382BF /* Home.swift in Sources */,
@@ -369,6 +374,7 @@
 			files = (
 				B88B24EE2833C894008382BF /* BankerApp.swift in Sources */,
 				B88B24F22833C894008382BF /* Persistence.swift in Sources */,
+				B87EBC9A28368DEE00EC985E /* Banker.xcdatamodeld in Sources */,
 				B88B24F02833C894008382BF /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +759,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B87EBC9828368DEE00EC985E /* Shared.xcdatamodel */,
+			);
+			currentVersion = B87EBC9828368DEE00EC985E /* Shared.xcdatamodel */;
+			path = Banker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B88B24BB2833C892008382BF /* Project object */;
 }

@@ -77,7 +77,7 @@ struct AddNewTask: View {
       .frame(maxWidth: .infinity, alignment: .leading)
       .overlay(alignment: .bottomTrailing) {
         Button {
-
+          taskModel.showDatePicker.toggle()
         } label: {
           Image(systemName: "calendar")
             .foregroundColor(.black)
@@ -130,9 +130,55 @@ struct AddNewTask: View {
         .padding(.top, 8)
       }
       .padding(.top, 10)
+
+      Divider()
+
+      // MARK: Save Button
+      Button {
+        // MARK: If success closing View
+        if taskModel.addTask(context: env.managedObjectContext) {
+          env.dismiss()
+        }
+      } label: {
+        Text("Save Task")
+          .font(.callout)
+          .fontWeight(.semibold)
+          .frame(maxWidth: .infinity)
+          .padding(.vertical, 12)
+          .foregroundColor(.white)
+          .background {
+            Capsule()
+              .fill(.black)
+          }
+      }
+      .frame(maxHeight: .infinity, alignment: .bottom)
+      .padding(.bottom, 10)
+      .disabled(taskModel.taskTitle.isEmpty)
+      .opacity(taskModel.taskTitle.isEmpty ? 0.6 : 1)
     }
     .frame(maxHeight: .infinity, alignment: .top)
     .padding()
+    .overlay {
+      ZStack {
+        if taskModel.showDatePicker {
+          Rectangle()
+            .fill(.ultraThinMaterial)
+            .ignoresSafeArea()
+            .onTapGesture {
+              taskModel.showDatePicker = false
+            }
+
+          // MARK: Disabling Past
+          DatePicker.init("", selection: $taskModel.taskDeadline, in: Date.now...Date.distantFuture)
+            .datePickerStyle(.graphical)
+            .labelsHidden()
+            .padding()
+            .background(.white, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .padding()
+        }
+      }
+      .animation(.easeInOut, value: taskModel.showDatePicker)
+    }
   }
 }
 
