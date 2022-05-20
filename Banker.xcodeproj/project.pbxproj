@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366BAC132837210F0053BAA1 /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */; };
 		B87AB5062835449000152C16 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB5052835449000152C16 /* TaskViewModel.swift */; };
 		B87AB50828354C0300152C16 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB50728354C0300152C16 /* AddNewTask.swift */; };
 		B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
 		B87AB5052835449000152C16 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B87AB50728354C0300152C16 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
 		B87EBC9828368DEE00EC985E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				B88B25052833CC56008382BF /* Home.swift */,
 				B87AB50728354C0300152C16 /* AddNewTask.swift */,
+				366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */,
 				B88B24ED2833C894008382BF /* BankerApp.swift in Sources */,
 				B88B24F12833C894008382BF /* Persistence.swift in Sources */,
+				366BAC132837210F0053BAA1 /* DynamicFilteredView.swift in Sources */,
 				B88B25062833CC56008382BF /* Home.swift in Sources */,
 				B87AB5062835449000152C16 /* TaskViewModel.swift in Sources */,
 				B88B24EF2833C894008382BF /* ContentView.swift in Sources */,

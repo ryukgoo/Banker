@@ -10,7 +10,7 @@ import SwiftUI
 struct AddNewTask: View {
   @EnvironmentObject var taskModel: TaskViewModel
   // MARK: All Envirnment Values in one Variable
-  @Environment(\.self) var env
+  @Environment(\.self) var environment
   @Namespace var animation
   var body: some View {
     VStack(spacing: 12) {
@@ -19,12 +19,26 @@ struct AddNewTask: View {
         .frame(maxWidth: .infinity)
         .overlay(alignment: .leading) {
           Button {
-            env.dismiss()
+            environment.dismiss()
           } label: {
             Image(systemName: "arrow.left")
               .font(.title3)
               .foregroundColor(.black)
           }
+        }
+        .overlay(alignment: .trailing) {
+          Button {
+            if let editTask = taskModel.editTask {
+              environment.managedObjectContext.delete(editTask)
+              try? environment.managedObjectContext.save()
+              environment.dismiss()
+            }
+          } label: {
+            Image(systemName: "trash")
+              .font(.title3)
+              .foregroundColor(.red)
+          }
+          .opacity(taskModel.editTask == nil ? 0 : 1)
         }
 
       VStack(alignment: .leading, spacing: 12) {
@@ -136,8 +150,8 @@ struct AddNewTask: View {
       // MARK: Save Button
       Button {
         // MARK: If success closing View
-        if taskModel.addTask(context: env.managedObjectContext) {
-          env.dismiss()
+        if taskModel.addTask(context: environment.managedObjectContext) {
+          environment.dismiss()
         }
       } label: {
         Text("Save Task")

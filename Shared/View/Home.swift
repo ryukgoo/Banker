@@ -20,7 +20,7 @@ struct Home: View {
                 animation: .easeInOut)
   var tasks: FetchedResults<Task>
 
-  @Environment(\.self) var env
+  @Environment(\.self) var environment
 
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
@@ -84,7 +84,9 @@ struct Home: View {
   @ViewBuilder
   func taskView() -> some View {
     LazyVStack(spacing: 20) {
-      ForEach(tasks) { task in
+
+      // MARK: Custom Filtered Request View
+      DynamicFilteredView(currentTab: taskModel.currentTab) { (task: Task) in
         taskRowView(task: task)
       }
     }
@@ -108,7 +110,7 @@ struct Home: View {
         Spacer()
 
         // MARK: Edit Buton only for Non Completed Tasks
-        if !task.completed {
+        if !task.completed && taskModel.currentTab != "Failed" {
           Button {
             taskModel.editTask = task
             taskModel.openEditTask = true
@@ -143,11 +145,11 @@ struct Home: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
 
-        if !task.completed {
+        if !task.completed && taskModel.currentTab != "Failed" {
           Button {
             // MARK: Updating Core Data
             task.completed.toggle()
-            try? env.managedObjectContext.save()
+            try? environment.managedObjectContext.save()
           } label: {
             Circle()
               .strokeBorder(.black, lineWidth: 1.5)
@@ -168,7 +170,8 @@ struct Home: View {
   // MARK: Custom Segmented Bar
   @ViewBuilder
   func customSegmentedBar() -> some View {
-    let tabs = ["Today", "Updating", "Task Done"]
+    // In Case if we Missed the Task
+    let tabs = ["Today", "Updating", "Done", "Failed"]
     HStack(spacing: 10) {
       ForEach(tabs, id: \.self) { tab in
         Text(tab)
