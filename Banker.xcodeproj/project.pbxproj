@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		366BAC132837210F0053BAA1 /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */; };
+		B80332DC298A279000CBF832 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80332DB298A279000CBF832 /* LoadingView.swift */; };
+		B872DFA92989142C00889397 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872DFA82989142C00889397 /* LoginView.swift */; };
+		B872DFAC2989148500889397 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872DFAB2989148500889397 /* View+Extension.swift */; };
 		B87AB5062835449000152C16 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB5052835449000152C16 /* TaskViewModel.swift */; };
 		B87AB50828354C0300152C16 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87AB50728354C0300152C16 /* AddNewTask.swift */; };
 		B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87EBC9728368DEE00EC985E /* Banker.xcdatamodeld */; };
@@ -26,6 +29,7 @@
 		B88B24F42833C894008382BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88B24C52833C894008382BF /* Assets.xcassets */; };
 		B88B25062833CC56008382BF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25052833CC56008382BF /* Home.swift */; };
 		B88B25092833CE2E008382BF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B88B25082833CE2E008382BF /* .swiftlint.yml */; };
+		B8989F392971207F00B166DD /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8989F382971207F00B166DD /* AddUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
+		B80332DB298A279000CBF832 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B872DFA82989142C00889397 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B872DFAB2989148500889397 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		B87AB5052835449000152C16 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B87AB50728354C0300152C16 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
 		B87EBC9828368DEE00EC985E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +72,7 @@
 		B88B24E92833C894008382BF /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		B88B25052833CC56008382BF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		B88B25082833CE2E008382BF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B8989F382971207F00B166DD /* AddUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B872DFA72989140B00889397 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B872DFA82989142C00889397 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B872DFAA2989147100889397 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B872DFAB2989148500889397 /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B88B24BA2833C892008382BF = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +138,9 @@
 		B88B24BF2833C892008382BF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B88B25042833CC46008382BF /* View */,
+				B88B25042833CC46008382BF /* Views */,
 				B88B25032833CC34008382BF /* ViewModel */,
+				B872DFAA2989147100889397 /* Extensions */,
 				B88B24C22833C892008382BF /* BankerApp.swift */,
 				B88B24C32833C892008382BF /* ContentView.swift */,
 				B88B24C42833C892008382BF /* Persistence.swift */,
@@ -170,14 +195,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B88B25042833CC46008382BF /* View */ = {
+		B88B25042833CC46008382BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B872DFA72989140B00889397 /* Login */,
 				B88B25052833CC56008382BF /* Home.swift */,
 				B87AB50728354C0300152C16 /* AddNewTask.swift */,
 				366BAC122837210F0053BAA1 /* DynamicFilteredView.swift */,
+				B8989F382971207F00B166DD /* AddUser.swift */,
+				B80332DB298A279000CBF832 /* LoadingView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,10 +215,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B88B24F72833C894008382BF /* Build configuration list for PBXNativeTarget "Banker (iOS)" */;
 			buildPhases = (
-				B88B25072833CD97008382BF /* Swift Lint */,
 				B88B24C62833C894008382BF /* Sources */,
 				B88B24C72833C894008382BF /* Frameworks */,
 				B88B24C82833C894008382BF /* Resources */,
+				B88B25072833CD97008382BF /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -262,7 +290,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					B88B24C92833C894008382BF = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -338,6 +366,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B88B25072833CD97008382BF /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -352,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint && swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -363,11 +392,15 @@
 			files = (
 				B87EBC9928368DEE00EC985E /* Banker.xcdatamodeld in Sources */,
 				B88B24ED2833C894008382BF /* BankerApp.swift in Sources */,
+				B872DFAC2989148500889397 /* View+Extension.swift in Sources */,
 				B88B24F12833C894008382BF /* Persistence.swift in Sources */,
+				B8989F392971207F00B166DD /* AddUser.swift in Sources */,
+				B80332DC298A279000CBF832 /* LoadingView.swift in Sources */,
 				366BAC132837210F0053BAA1 /* DynamicFilteredView.swift in Sources */,
 				B88B25062833CC56008382BF /* Home.swift in Sources */,
 				B87AB5062835449000152C16 /* TaskViewModel.swift in Sources */,
 				B88B24EF2833C894008382BF /* ContentView.swift in Sources */,
+				B872DFA92989142C00889397 /* LoginView.swift in Sources */,
 				B87AB50828354C0300152C16 /* AddNewTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +483,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -508,6 +542,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -593,9 +628,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -619,9 +656,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -684,6 +723,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
@@ -702,6 +742,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
